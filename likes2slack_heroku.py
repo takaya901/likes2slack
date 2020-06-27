@@ -1,6 +1,7 @@
 import tweepy
 import json
 import requests
+import os
 
 def create_twitter_url(id_str, screen_name):
     return "https://twitter.com/"+screen_name+"/status/"+str(id_str)
