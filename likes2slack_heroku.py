@@ -15,7 +15,7 @@ def post():
     me = api.me().screen_name
 
     slackURL = "https://slack.com/api/"
-    params = {'token': os.environ["SLACK_TOKEN"], 'channel': '#test_', 'text': '', 'as_user': 'true'}
+    params = {'token': os.environ["SLACK_TOKEN"], 'channel': '#interesting_paper', 'text': '', 'as_user': 'true'}
 
     words = ['github:', 'arxiv:', 'pdf:']
     ids = ['slam_hub', 'arxiv_cscv', 'shiropen2', 'ak92501', 'HCI_Comics']
