@@ -3,9 +3,9 @@ import likes2slack_heroku
 
 twische = BlockingScheduler()
 
-@twische.scheduled_job('interval',minutes=60)
+@twische.scheduled_job('interval',minutes=5)
 def timed_job():
-    words.puttweet()
+    likes2slack_heroku.post()
 
 if __name__ == "__main__":
     twische.start()
