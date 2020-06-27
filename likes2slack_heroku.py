@@ -25,12 +25,9 @@ def post():
         if not any((q in status.text) for q in words) and not any((id in status.user.screen_name) for id in ids):
             continue
 
-        date_str = str(status.created_at)
-        created_at = datetime.fromisoformat(date_str)
-
         #1日以内にツイートされていたらSlackにポスト
         yesterday = datetime.now() - timedelta(days=1)
-        if created_at >= yesterday:
+        if status.created_at >= yesterday:
             params['text'] = create_twitter_url(status.id, status.user.screen_name)
             r = requests.post(slackURL + "chat.postMessage", params=params)
 
